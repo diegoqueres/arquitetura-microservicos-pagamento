@@ -3,7 +3,6 @@ package net.diegoqueres.pagamento.data.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.*;
-import net.diegoqueres.pagamento.entity.ProdutoVenda;
 import net.diegoqueres.pagamento.entity.Venda;
 import org.modelmapper.ModelMapper;
 import org.springframework.hateoas.RepresentationModel;
@@ -32,7 +31,7 @@ public class VendaDTO extends RepresentationModel<VendaDTO> implements Serializa
     private Double valorTotal;
 
     @JsonProperty("produtos")
-    private List<ProdutoVenda> produtos;
+    private List<ProdutoVendaDTO> produtos;
 
     public static VendaDTO create(Venda venda) {
         return new ModelMapper().map(venda, VendaDTO.class);

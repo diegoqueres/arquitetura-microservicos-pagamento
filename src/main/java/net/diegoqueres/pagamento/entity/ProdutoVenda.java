@@ -1,6 +1,8 @@
 package net.diegoqueres.pagamento.entity;
 
 import lombok.*;
+import net.diegoqueres.pagamento.data.dto.ProdutoVendaDTO;
+import org.modelmapper.ModelMapper;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -30,4 +32,7 @@ public class ProdutoVenda implements Serializable {
     @JoinColumn(name = "id_venda")
     private Venda venda;
 
+    public static ProdutoVenda create(ProdutoVendaDTO produtoVendaDTO) {
+        return new ModelMapper().map(produtoVendaDTO, ProdutoVenda.class);
+    }
 }

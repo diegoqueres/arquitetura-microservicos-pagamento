@@ -1,6 +1,8 @@
 package net.diegoqueres.pagamento.entity;
 
 import lombok.*;
+import net.diegoqueres.pagamento.data.dto.VendaDTO;
+import org.modelmapper.ModelMapper;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -33,4 +35,7 @@ public class Venda implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "venda", cascade = {CascadeType.REFRESH})
     private List<ProdutoVenda> produtos;
 
+    public static Venda create(VendaDTO vendaDTO) {
+        return new ModelMapper().map(vendaDTO, Venda.class);
+    }
 }
