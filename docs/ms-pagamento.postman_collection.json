@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "41af1245-c575-4295-a280-b21601a4a69d",
+		"name": "ms-pagamento",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Venda - new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": \"2020-10-07\",\n    \"valorTotal\": 200.0,\n    \"produtos\": [\n        {\n            \"idProduto\": 2,\n            \"quantidade\": 5\n        },\n        {\n            \"idProduto\": 1,\n            \"quantidade\": 4\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/pagamento/venda",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pagamento",
+						"venda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venda - by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/pagamento/venda/{{id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pagamento",
+						"venda",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venda - find all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/pagamento/venda",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"pagamento",
+						"venda"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
