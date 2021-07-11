@@ -1,6 +1,8 @@
 package net.diegoqueres.pagamento.entity;
 
 import lombok.*;
+import net.diegoqueres.pagamento.data.dto.ProdutoDTO;
+import org.modelmapper.ModelMapper;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -21,5 +23,9 @@ public class Produto implements Serializable {
 
     @Column(name = "estoque", nullable = false, length=10)
     private Integer estoque;
+
+    public static Produto create(ProdutoDTO produtoDTO) {
+        return new ModelMapper().map(produtoDTO, Produto.class);
+    }
 
 }
