@@ -30,3 +30,8 @@ crud:
   rabbitmq:
     exchange: crud.exchange
     queue: crud.produto.queue
+
+security:
+  jwt:
+    token:
+      secret-key: Z{sW8xjl7b}4{fyrEt+F(Zf+za5Q+mBLetiEI(p*KilB$Bs)wf;e4UPUu+mh
