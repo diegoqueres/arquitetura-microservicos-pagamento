@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: crud
+    name: pagamento
   jpa:
     show-sql: false
     hibernate:
